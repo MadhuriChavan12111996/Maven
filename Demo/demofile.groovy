@@ -1,12 +1,11 @@
 pipeline {
     agent any
+tools
+	{
+		maven 'MAVEN_HOME'
+	}
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout your source code from version control
-                 git url: 'https://github.com/hkshitesh/maven-pipeline.git'
-            }
-        }
+ 
         stage('Build') {
             steps {
                 // Use Maven to build your project
@@ -38,4 +37,4 @@ pipeline {
             echo 'Pipeline failed!'
         }
     }
-}
+} 
